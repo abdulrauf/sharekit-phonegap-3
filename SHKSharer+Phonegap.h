@@ -3,8 +3,7 @@
 //  example
 //
 //  Created by Erick Camacho Chavarría on 13/08/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
-//
+//  Updated by Abdul Rauf on September 2013
 
 #import "SHKSharer.h"
 

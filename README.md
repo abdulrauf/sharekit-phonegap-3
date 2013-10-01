@@ -2,12 +2,10 @@
 
 By Erick Camacho
 Updated for Cordova 1.7/Sharekit 2.0 by Kerri Shotts
+Updated by Abdul Rauf for phonegap 3.0 full support and ARC
 
-> (KS 05/30/2012) **IMPORTANT** This update was done with Sharekit 2.0 in place (as obtained from https://github.com/ShareKit/ShareKit). The previous version at http://getsharekit.com proved too unstable and had major bugs under iOS 5. That said, it may still work, but I can't gaurantee it. 
 
-## Adding ShareKit to a PhoneGap Project (revised for 2.0)
-
-* Download [ShareKit 2.0](https://github.com/ShareKit/ShareKit) and install it into your project following the instructions provided in [the wiki](https://github.com/ShareKit/ShareKit/wiki).
+* Install sharekit 2.x using https://github.com/ShareKit/ShareKit/wiki/Installing-sharekit
 
 * * Make sure you follow *all* the steps, all the way through step 7. This will ensure you have FaceBook SSO working properly.
 
@@ -40,17 +38,15 @@ Updated for Cordova 1.7/Sharekit 2.0 by Kerri Shotts
 
 ## Adding the Plugin to the Project
 
-1. Copy ShareKitPlugin.h, ShareKitPlugin.m, SHKSharer+Phonegap.h and SHKSharer+Phonegap.m to your project. 
-2. Add both files to the Plugins Folder in Xcode.
-3. Copy the ShareKitPlugin.js to your www folder.
-4. Modify the PhoneGap.plist file of your application. Under the key "Plugins" add another one with key name
-ShareKitPlugin and value ShareKitPlugin.
+1. phonegap local plugin add https://github.com/abdulrauf/sharekit-phonegap-3.git
 
 
 ## Using the plugin
 
 
-Add the js file to your html. 
+Add the js file to your html - just make sure put this line after including phonegap js file
+
+<script type="text/javascript" src="ShareKitPlugin.js"></script>
 
 The plugin registers itself in the variable window.plugins.shareKit. It exposes the following methods:
 
@@ -82,15 +78,12 @@ you must logout the current one first );
 
 9. `shareToMail(subject, body)` Opens up the iOS mail dialog with pre-filled subject and body
 
-## Running the example
+10. `shareToSMS(message, url)` Opens up the iOS sms application dialog with pre-filled message and url
 
-The example has been removed; I don't have the time to upgrade it with all the various issues involved in moving it to Sharekit 2.0. The plugin /does/ work; however you should use the above as a reference.
-
+11. `shareToCall()` Opens up the iOS call app
 ## Limitations
 
 Currently the plugin can only share messages and URLs. In the future I will add functionality to share images as well.
-
-Because in my current project I'm only sharing content to Twitter and Facebook, I've only added methods to logout from this two social networks. You can easily add methods to logout from other networks following these examples.
 
 ## License 
 

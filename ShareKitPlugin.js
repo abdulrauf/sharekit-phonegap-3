@@ -1,7 +1,4 @@
-//
 //  ShareKitPlugin.js
-//
-//
 //  Updated by Abdul Rauf on 30/08/2013.
 //  MIT Licensed
 //

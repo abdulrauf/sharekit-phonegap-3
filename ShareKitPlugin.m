@@ -4,6 +4,8 @@
 //  Created by Erick Camacho on 28/07/11.
 //  MIT Licensed
 //  Phonegap 3.0 support by Mohamed Fasil
+//  Updated by Abdul Rauf on September 2013
+//  ARC Support
 
 #import "ShareKitPlugin.h"
 #import "SHKActionSheet.h"
@@ -174,7 +176,6 @@
 // Dismisses the people picker and shows the application when users tap Cancel.
 - (void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker;
 {
-  //[self dismissModalViewControllerAnimated:YES];
   [[SHK currentHelper] hideCurrentViewControllerAnimated:YES];
 }
 
@@ -192,8 +193,6 @@
   picker.displayedProperties = displayedItems;
   // Show the picker
   [[SHK currentHelper] showViewController:picker];
-  //[self presentModalViewController:picker animated:YES];
-  //[picker release];
 }
 
 - (void)shareToCall:(CDVInvokedUrlCommand*)command {

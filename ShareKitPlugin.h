@@ -1,8 +1,6 @@
-//
 //  ShareKitPlugin.h
-//  
-//
 //  Created by Erick Camacho on 28/07/11.
+//  Updated by Abdul Rauf on September 2013
 //  MIT Licensed
 //
 
