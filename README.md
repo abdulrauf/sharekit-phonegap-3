@@ -1,7 +1,9 @@
 #ShareKit plugin for Phonegap 
 
 By Erick Camacho
+
 Updated for Cordova 1.7/Sharekit 2.0 by Kerri Shotts
+
 Updated by Abdul Rauf for phonegap 3.0 full support and ARC
 
 
