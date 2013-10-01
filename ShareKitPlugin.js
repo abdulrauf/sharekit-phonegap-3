@@ -1,91 +1,84 @@
 //
 //  ShareKitPlugin.js
-//  
 //
-//  Created by Erick Camacho on 28/07/11.
+//
+//  Updated by Abdul Rauf on 30/08/2013.
 //  MIT Licensed
 //
 
 function ShareKitPlugin()
 {
-	console.log('creating plugin');
+    console.log('creating plugin');
 };
 
 ShareKitPlugin.prototype.share = function(message, url)
 {
-	cordova.exec(null, null, "ShareKitPlugin", "share", [message, url]);
-    
+  console.log("share method");
+    cordova.exec(null, null, "ShareKitPlugin", "share", [message, url]);
 };
 
 
 ShareKitPlugin.prototype.isLoggedToTwitter = function( callback )
 {
-	
-    cordova.exec(callback, null, "ShareKitPlugin", "isLoggedToTwitter", [] );
+  cordova.exec(callback, null, "ShareKitPlugin", "isLoggedToTwitter", [] );
 };
 
 ShareKitPlugin.prototype.isLoggedToFacebook = function( callback )
 {
-	
-    cordova.exec(callback, null, "ShareKitPlugin", "isLoggedToFacebook", [] );
-
+  cordova.exec(callback, null, "ShareKitPlugin", "isLoggedToFacebook", [] );
 };
 
 ShareKitPlugin.prototype.logoutFromTwitter = function()
 {
-	
-    cordova.exec(null, null, "ShareKitPlugin", "logoutFromTwitter", [] );
-
+  cordova.exec(null, null, "ShareKitPlugin", "logoutFromTwitter", [] );
 };
 
 ShareKitPlugin.prototype.logoutFromFacebook = function()
 {
-	
-    cordova.exec(null, null, "ShareKitPlugin", "logoutFromFacebook", [] );
-
+  cordova.exec(null, null, "ShareKitPlugin", "logoutFromFacebook", [] );
 };
 
 
 ShareKitPlugin.prototype.facebookConnect = function()
 {
-	
-    cordova.exec(null, null, "ShareKitPlugin", "facebookConnect", [] );
-    
+  cordova.exec(null, null, "ShareKitPlugin", "facebookConnect", [] );
 };
 
 ShareKitPlugin.prototype.shareToFacebook = function( message, url)
 {
-	
-    cordova.exec(null, null, "ShareKitPlugin", "shareToFacebook", [message, url] );
-    
+  cordova.exec(null, null, "ShareKitPlugin", "shareToFacebook", [message, url] );
 };
 
 ShareKitPlugin.prototype.shareToTwitter = function( message, url)
 {
-	
-    cordova.exec(null, null, "ShareKitPlugin", "shareToTwitter", [message, url] );
-    
+  cordova.exec(null, null, "ShareKitPlugin", "shareToTwitter", [message, url] );
 };
 
 ShareKitPlugin.prototype.shareToMail = function( subject, message)
 {
-	
-    cordova.exec(null, null, "ShareKitPlugin", "shareToMail", [subject, message] );
-    
+  cordova.exec(null, null, "ShareKitPlugin", "shareToMail", [subject, message] );
 };
 
+ShareKitPlugin.prototype.shareToSMS = function( message, url)
+{
+  cordova.exec(null, null, "ShareKitPlugin", "shareToSMS", [message, url] );
+};
 
+ShareKitPlugin.prototype.shareToCall = function()
+{
+  cordova.exec(null, null, "ShareKitPlugin", "shareToCall", [] );
+};
 
 
 ShareKitPlugin.install = function()
 {
-    if(!window.plugins)
-    {
-        window.plugins = {};	
-    }
+  if(!window.plugins)
+  {
+      window.plugins = {};
+  }
 
-    window.plugins.shareKit = new ShareKitPlugin();
-    return window.plugins.shareKit;
+  window.plugins.shareKit = new ShareKitPlugin();
+  return window.plugins.shareKit;
 };
 
 cordova.addConstructor(ShareKitPlugin.install);

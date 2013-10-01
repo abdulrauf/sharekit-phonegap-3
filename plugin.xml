@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+  id="com.freerangefuture.plugins.sharekitplugin"
+  version="3.0.0">
+
+  <name>ShareKitPlugin</name>
+  <description>iOS Social media sharing.</description>
+  <license>MIT</license>
+
+  <engines>
+    <engine name="cordova" version=">=3.0.0" />
+  </engines>    
+
+  <js-module src="ShareKitPlugin.js" name="ShareKitPlugin">
+    <clobbers target="cordova.plugins.ShareKitPlugin" />
+  </js-module>
+
+  <!-- ios -->
+  <platform name="ios">
+    <!-- Cordova >= 2.8 -->
+    <config-file target="config.xml" parent="/*">
+        <feature name="ShareKitPlugin">
+            <param name="ios-package" value="ShareKitPlugin" />
+        </feature>
+    </config-file>
+
+    <header-file src="SHKSharer+Phonegap.h" />
+    <source-file src="SHKSharer+Phonegap.m" />
+
+    <header-file src="ShareKitPlugin.h" />
+    <source-file src="ShareKitPlugin.m"/>
+
+
+  </platform>
+
+</plugin>

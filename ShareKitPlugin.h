@@ -10,41 +10,39 @@
 
 #import "SHK.h"
 #import "SHKSharer+Phonegap.h"
-#ifdef CORDOVA_FRAMEWORK
+
 #import <Cordova/CDVPlugin.h>
 #import <Cordova/CDVPluginResult.h>
-//#import <Cordova/JSONKit.h>
-
-#else
-#import "CDVPlugin.h"
-#import "CDVPluginResult.h"
-//#import "JSONKit.h"
-#endif
+#import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
 
 
 
-@interface ShareKitPlugin : CDVPlugin {
+@interface ShareKitPlugin : CDVPlugin<ABPeoplePickerNavigationControllerDelegate, ABPersonViewControllerDelegate> {
 
-    
+  
 }
 
+- (void)share:(CDVInvokedUrlCommand*)command;
 
-- (void)share:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
+- (void)isLoggedToTwitter:(CDVInvokedUrlCommand*)command;
 
-- (void)isLoggedToTwitter:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
+- (void)isLoggedToFacebook:(CDVInvokedUrlCommand*)command;
 
-- (void)isLoggedToFacebook:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
+- (void)logoutFromTwitter:(CDVInvokedUrlCommand*)command;
 
-- (void)logoutFromTwitter:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
+- (void)logoutFromFacebook:(CDVInvokedUrlCommand*)command;
 
-- (void)logoutFromFacebook:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
+- (void)facebookConnect:(CDVInvokedUrlCommand*)command;
 
-- (void)facebookConnect:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
+- (void)shareToFacebook:(CDVInvokedUrlCommand*)command;
 
-- (void)shareToFacebook:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
+- (void)shareToTwitter:(CDVInvokedUrlCommand*)command;
 
-- (void)shareToTwitter:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
+- (void)shareToMail:(CDVInvokedUrlCommand*)command;
 
-- (void)shareToMail:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
+- (void)shareToSMS:(CDVInvokedUrlCommand*)command;
+
+- (void)shareToCall:(CDVInvokedUrlCommand*)command;
 
 @end

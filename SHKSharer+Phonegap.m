@@ -17,7 +17,7 @@
         [controller promptAuthorization];
     }
     
-    return [controller autorelease];
+  return controller;//[controller autorelease];
 }
 
 @end
